@@ -1,13 +1,13 @@
 import { NextFunction, Request, Response } from 'express';
 import crypto from 'crypto';
 
-import User, { IUser, UserDocument } from '../models/User.js';
+import User, { IUser, UserDocument } from '../user/user-model.js';
 import { ErrorResponse } from '../utils/error-response.js';
-import { asyncHandler } from '../middleware/async.js';
+import { asyncHandler } from '../utils/async-handler.js';
 import sendEmail from '../utils/send-email.js';
 import { ResponseCT } from '../types/response-custom-type.type.js';
 import { checkLoggedUser } from '../utils/check-user-set.js';
-import { setBootcampsJoined } from './utils.js';
+import { setBootcampsJoined } from '../user/set-bootcamps-joined.js';
 
 // @desc  Register a user
 // @route POST /api/v1/auth/register

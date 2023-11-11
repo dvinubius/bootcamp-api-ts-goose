@@ -9,14 +9,20 @@ import {
   getBootcampsInRadius,
   bootcampPhotoUpload,
   registerForBootcamp,
-} from '../controllers/bootcamps.js';
-import Course from '../models/Course.js';
-import Review from '../models/Review.js';
-import Bootcamp from '../models/Bootcamp.js';
+} from './bootcamp-controller.js';
+import Course from '../course/course-model.js';
+import Review from '../review/review-model.js';
+import Bootcamp from './bootcamp-model.js';
 import advancedResults from '../middleware/advancedResults.js';
-import { protect, authorize } from '../middleware/auth.js';
-import { addCourse, getCoursesForBootcamp } from '../controllers/courses.js';
-import { addReview, getReviewsForBootcamp } from '../controllers/reviews.js';
+import { protect, authorize } from '../auth/auth-middleware.js';
+import {
+  addCourse,
+  getCoursesForBootcamp,
+} from '../course/course-controller.js';
+import {
+  addReview,
+  getReviewsForBootcamp,
+} from '../review/review-controller.js';
 
 const router = express.Router();
 

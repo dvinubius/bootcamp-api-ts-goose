@@ -1,11 +1,11 @@
 import jwt from 'jsonwebtoken';
 import { Request, Response, NextFunction } from 'express';
 
-import { asyncHandler } from './async.js';
+import { asyncHandler } from '../utils/async-handler.js';
 import { ErrorResponse } from '../utils/error-response.js';
-import User from '../models/User.js';
+import User from '../user/user-model.js';
 import { checkLoggedUser } from '../utils/check-user-set.js';
-import { Role } from '../types/role.enum.type.js';
+import { Role } from '../user/types/role.enum.type.js';
 
 const jwtSecret = process.env.JWT_SECRET;
 

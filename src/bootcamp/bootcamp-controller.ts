@@ -1,10 +1,10 @@
 import { Request, Response, NextFunction } from 'express';
 import path from 'path';
 
-import Bootcamp, { BootcampDocument } from '../models/Bootcamp.js';
-import User, { UserDocument } from '../models/User.js';
+import Bootcamp, { BootcampDocument } from './bootcamp-model.js';
+import User, { UserDocument } from '../user/user-model.js';
 import { ErrorResponse } from '../utils/error-response.js';
-import { asyncHandler } from '../middleware/async.js';
+import { asyncHandler } from '../utils/async-handler.js';
 import geocoder from '../utils/geocoder.js';
 import { ResponseCT } from '../types/response-custom-type.type.js';
 import { checkLoggedUser } from '../utils/check-user-set.js';

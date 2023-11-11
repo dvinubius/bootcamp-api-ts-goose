@@ -1,9 +1,9 @@
 import mongoose, { Query } from 'mongoose';
 import { UpdateResult } from 'mongodb';
 
-import { MINIMUM_SKILLS } from '../types/minimum-skill.enum.type.js';
-import Bootcamp, { BootcampBaseDocument } from './Bootcamp.js';
-import { UserDocument } from './User.js';
+import { MINIMUM_SKILLS } from './types/minimum-skill.enum.type.js';
+import Bootcamp, { BootcampBaseDocument } from '../bootcamp/bootcamp-model.js';
+import { UserDocument } from '../user/user-model.js';
 
 const CourseSchema = new mongoose.Schema({
   title: {

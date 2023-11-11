@@ -1,6 +1,6 @@
 import mongoose, { Query } from 'mongoose';
-import Bootcamp, { BootcampBaseDocument } from './Bootcamp.js';
-import { UserDocument } from './User.js';
+import Bootcamp, { BootcampBaseDocument } from '../bootcamp/bootcamp-model.js';
+import { UserDocument } from '../user/user-model.js';
 import { UpdateResult } from 'mongodb';
 
 const ReviewSchema = new mongoose.Schema<ReviewDocument, ReviewModel>({

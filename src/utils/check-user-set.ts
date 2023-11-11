@@ -1,5 +1,5 @@
 import { Request } from 'express';
-import { UserDocument } from 'models/User.js';
+import { UserDocument } from 'user/user-model.js';
 
 export const checkLoggedUser = (req: Request): UserDocument => {
   if (!req.user) {

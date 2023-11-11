@@ -1,9 +1,9 @@
 import { Request, Response, NextFunction } from 'express';
 
-import Review, { IReview, ReviewDocument } from '../models/Review.js';
+import Review, { IReview, ReviewDocument } from './review-model.js';
 import { ErrorResponse } from '../utils/error-response.js';
-import { asyncHandler } from '../middleware/async.js';
-import Bootcamp, { BootcampDocument } from '../models/Bootcamp.js';
+import { asyncHandler } from '../utils/async-handler.js';
+import Bootcamp, { BootcampDocument } from '../bootcamp/bootcamp-model.js';
 import { ResponseCT } from '../types/response-custom-type.type.js';
 import { checkLoggedUser } from '../utils/check-user-set.js';
 

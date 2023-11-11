@@ -5,11 +5,11 @@ import {
   createUser,
   updateUser,
   deleteUser,
-} from '../controllers/users.js';
+} from './user-controller.js';
 // Include other resource routers
-import User from '../models/User.js';
+import User from './user-model.js';
 import advancedResults from '../middleware/advancedResults.js';
-import { protect, authorize } from '../middleware/auth.js';
+import { protect, authorize } from '../auth/auth-middleware.js';
 
 const router = express.Router();
 

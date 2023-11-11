@@ -18,11 +18,11 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Route files
-import bootcamps from './routes/bootcamps.js';
-import courses from './routes/courses.js';
-import auth from './routes/auth.js';
-import users from './routes/users.js';
-import reviews from './routes/reviews.js';
+import bootcamps from './bootcamp/bootcamp-routes.js';
+import courses from './course/course-routes.js';
+import auth from './auth/auth-routes.js';
+import users from './user/user-routes.js';
+import reviews from './review/review-routes.js';
 
 connectDB();
 

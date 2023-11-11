@@ -1,11 +1,11 @@
 import mongoose, { Query } from 'mongoose';
 import slugify from 'slugify';
 import geocoder from '../utils/geocoder.js';
-import { CAREERS, Career } from '../types/career.enum.type.js';
-import { Location } from '../types/location.type.js';
+import { CAREERS, Career } from './types/career.enum.type.js';
+import { Location } from './types/location.type.js';
 import { DeleteResult, UpdateResult } from 'mongodb';
-import { UserDocument } from './User.js';
-import Course from './Course.js';
+import { UserDocument } from '../user/user-model.js';
+import Course from '../course/course-model.js';
 
 const BootcampSchema = new mongoose.Schema<BootcampDocument, BootcampModel>(
   {

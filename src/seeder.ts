@@ -8,10 +8,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Load models
-import Bootcamp from './models/Bootcamp.js';
-import Course from './models/Course.js';
-import User from './models/User.js';
-import Review from './models/Review.js';
+import Bootcamp from './bootcamp/bootcamp-model.js';
+import Course from './course/course-model.js';
+import User from './user/user-model.js';
+import Review from './review/review-model.js';
 
 // Connect to DB
 mongoose.set({ strictQuery: true });

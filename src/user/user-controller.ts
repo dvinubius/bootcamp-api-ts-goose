@@ -1,9 +1,9 @@
-import User, { IUser, UserDocument } from '../models/User.js';
+import User, { IUser, UserDocument } from './user-model.js';
 import { ErrorResponse } from '../utils/error-response.js';
-import { asyncHandler } from '../middleware/async.js';
+import { asyncHandler } from '../utils/async-handler.js';
 import { Request, Response, NextFunction } from 'express';
 import { ResponseCT } from 'types/response-custom-type.type.js';
-import { setBootcampsJoined } from './utils.js';
+import { setBootcampsJoined } from './set-bootcamps-joined.js';
 
 // @desc  Get all users
 // @route GET /api/v1/users

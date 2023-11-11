@@ -1,14 +1,14 @@
 import express from 'express';
-import Review from '../models/Review.js';
+import Review from './review-model.js';
 import {
   getReviews,
   getReview,
   addReview,
   updateReview,
   deleteReview,
-} from '../controllers/reviews.js';
+} from './review-controller.js';
 import advancedResults from '../middleware/advancedResults.js';
-import { protect, authorize } from '../middleware/auth.js';
+import { protect } from '../auth/auth-middleware.js';
 
 const router = express.Router({ mergeParams: true });
 

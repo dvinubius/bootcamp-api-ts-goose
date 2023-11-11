@@ -2,13 +2,12 @@ import express from 'express';
 import {
   getCourses,
   getCourse,
-  addCourse,
   updateCourse,
   deleteCourse,
-} from '../controllers/courses.js';
-import Course from '../models/Course.js';
+} from './course-controller.js';
+import Course from './course-model.js';
 import advancedResults from '../middleware/advancedResults.js';
-import { protect, authorize } from '../middleware/auth.js';
+import { protect, authorize } from '../auth/auth-middleware.js';
 
 const router = express.Router({ mergeParams: true });
 

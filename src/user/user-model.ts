@@ -4,8 +4,8 @@ import mongoose, { Query } from 'mongoose';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
-import Bootcamp, { IBootcamp } from './Bootcamp.js';
-import { DEFAULT_ROLE, ROLES, Role } from '../types/role.enum.type.js';
+import Bootcamp, { IBootcamp } from '../bootcamp/bootcamp-model.js';
+import { DEFAULT_ROLE, ROLES, Role } from './types/role.enum.type.js';
 
 const UserSchema = new mongoose.Schema<UserDocument, UserModel>(
   {
