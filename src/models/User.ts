@@ -110,8 +110,7 @@ UserSchema.pre<
   next();
 });
 
-// Reverse populate with virtuals
-
+// Reverse populate with virtual
 UserSchema.virtual('bootcampsOwned', {
   ref: 'Bootcamp',
   localField: '_id',

@@ -114,7 +114,7 @@ export const updateBootcamp = asyncHandler(
 // @access Private
 export const registerForBootcamp = asyncHandler(
   async (
-    req: Request<{ id: BootcampDocument['id'] }, {}>,
+    req: Request<{ id: BootcampDocument['id'] }>,
     res: ResponseCT<{ data: BootcampDocument & { address: string } }>,
     next: NextFunction
   ) => {
@@ -141,7 +141,6 @@ export const registerForBootcamp = asyncHandler(
       );
     }
 
-    bootcamp.address = bootcamp.location.formattedAddress || bootcamp.address;
     bootcamp.participants.push(userId);
     await bootcamp.save();
     res.status(200).json({ success: true, data: bootcamp });
