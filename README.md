@@ -28,6 +28,4 @@ My conclusions are documented in a series of [blog posts](https://medium.com)
 - ✅ ensure average ratings & cost update correctly
 - ✅ check env globally - if any value is missing don't start the server
 - ✅ catch errors in advancedResults
-- attempt reorganize into feature-oriented directory structure
-
-- tests
+- ✅ reorganize into feature-oriented directory structure
