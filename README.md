@@ -29,5 +29,3 @@ My conclusions are documented in a series of [blog posts](https://medium.com)
 - ✅ check env globally - if any value is missing don't start the server
 - ✅ catch errors in advancedResults
 - ✅ reorganize into feature-oriented directory structure
-
-- check register for bootcamp: user from dto overwritten by user from auth middleware?
