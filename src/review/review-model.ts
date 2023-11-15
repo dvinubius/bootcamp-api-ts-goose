@@ -43,6 +43,9 @@ export interface IReview {
   author: mongoose.Types.ObjectId | Record<string, unknown>;
 }
 
+export type CreateReviewDto = IReview;
+export type UpdateReviewDto = Partial<IReview>;
+
 interface ReviewBaseDocument extends IReview, mongoose.Document {
   bootcamp: BootcampBaseDocument['_id'] | BootcampBaseDocument;
   author: UserDocument['_id'] | UserDocument;

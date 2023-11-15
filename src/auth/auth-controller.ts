@@ -1,7 +1,11 @@
 import { NextFunction, Request, Response } from 'express';
 import crypto from 'crypto';
 
-import User, { IUser, UserDocument } from '../user/user-model.js';
+import User, {
+  CreateUserDto,
+  UpdateUserDetailsDto,
+  UserDocument,
+} from '../user/user-model.js';
 import { ErrorResponse } from '../utils/error-response.js';
 import { asyncHandler } from '../utils/async-handler.js';
 import sendEmail from '../utils/send-email.js';
@@ -14,7 +18,7 @@ import { setBootcampsJoined } from '../user/set-bootcamps-joined.js';
 // @access Public
 export const register = asyncHandler(
   async (
-    req: Request<{}, {}, IUser>,
+    req: Request<{}, {}, CreateUserDto>,
     res: ResponseCT<{ token: string }>,
     next: NextFunction
   ) => {
@@ -105,7 +109,7 @@ export const logout = asyncHandler(
 // @access Private
 export const updateUserDetails = asyncHandler(
   async (
-    req: Request<{}, {}, { name: string; email: string }>,
+    req: Request<{}, {}, UpdateUserDetailsDto>,
     res: ResponseCT<{ data: UserDocument }>,
     next: NextFunction
   ) => {

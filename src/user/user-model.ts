@@ -51,6 +51,13 @@ export interface IUser {
   resetPasswordToken?: string;
   resetPassowdExpire?: Date;
 }
+export type CreateUserDto = Omit<
+  IUser,
+  'resetPasswordToken' | 'resetPasswordExpire'
+>;
+export type UpdateUserDetailsDto = Partial<
+  Omit<CreateUserDto, 'password' | 'role'>
+>;
 
 export interface UserDocument extends IUser, mongoose.Document {
   bootcampsOwned: mongoose.Types.DocumentArray<IBootcamp>;

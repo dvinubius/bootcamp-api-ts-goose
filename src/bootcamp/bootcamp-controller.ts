@@ -1,7 +1,11 @@
 import { Request, Response, NextFunction } from 'express';
 import path from 'path';
 
-import Bootcamp, { BootcampDocument } from './bootcamp-model.js';
+import Bootcamp, {
+  BootcampDocument,
+  BootcampDto,
+  UpdateBootcampDto,
+} from './bootcamp-model.js';
 import User, { UserDocument } from '../user/user-model.js';
 import { ErrorResponse } from '../utils/error-response.js';
 import { asyncHandler } from '../utils/async-handler.js';
@@ -44,7 +48,7 @@ export const getBootcamp = asyncHandler(
 // @access Private
 export const createBootcamp = asyncHandler(
   async (
-    req: Request<{}, {}, { owner: UserDocument['id'] }>,
+    req: Request<{}, {}, BootcampDto & { owner: UserDocument['id'] }>,
     res: ResponseCT<{ data: BootcampDocument }>,
     next
   ) => {
@@ -73,7 +77,7 @@ export const createBootcamp = asyncHandler(
 // @access Private
 export const updateBootcamp = asyncHandler(
   async (
-    req: Request<{ id: BootcampDocument['id'] }, {}>,
+    req: Request<{ id: BootcampDocument['id'] }, {}, UpdateBootcampDto>,
     res: ResponseCT<{ data: BootcampDocument }>,
     next
   ) => {
@@ -114,7 +118,7 @@ export const updateBootcamp = asyncHandler(
 // @access Private
 export const registerForBootcamp = asyncHandler(
   async (
-    req: Request<{ id: BootcampDocument['id'] }>,
+    req: Request<{ id: BootcampDocument['id'] }, {}, { user: string }>,
     res: ResponseCT<{ data: BootcampDocument & { address: string } }>,
     next: NextFunction
   ) => {
@@ -135,7 +139,7 @@ export const registerForBootcamp = asyncHandler(
     if (bootcamp.participants.includes(userId)) {
       return next(
         new ErrorResponse(
-          `User ${req.body.user.email} already registered for bootcamp ${req.params.id}`,
+          `User ${req.body.user} already registered for bootcamp ${req.params.id}`,
           400
         )
       );

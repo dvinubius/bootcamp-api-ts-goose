@@ -55,6 +55,9 @@ export interface ICourse {
   owner: mongoose.Types.ObjectId | Record<string, unknown>;
 }
 
+export type CreateCourseDto = ICourse;
+export type UpdateCourseDto = Partial<ICourse>;
+
 interface CourseBaseDocument extends ICourse, mongoose.Document {
   bootcamp: BootcampBaseDocument['_id'] | BootcampBaseDocument;
   owner: UserDocument['_id'] | UserDocument;

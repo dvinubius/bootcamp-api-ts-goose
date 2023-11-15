@@ -1,6 +1,10 @@
 import { Request, Response, NextFunction } from 'express';
 
-import Review, { IReview, ReviewDocument } from './review-model.js';
+import Review, {
+  CreateReviewDto,
+  ReviewDocument,
+  UpdateReviewDto,
+} from './review-model.js';
 import { ErrorResponse } from '../utils/error-response.js';
 import { asyncHandler } from '../utils/async-handler.js';
 import Bootcamp, { BootcampDocument } from '../bootcamp/bootcamp-model.js';
@@ -70,7 +74,7 @@ export const getReview = asyncHandler(
 // @access Private
 export const addReview = asyncHandler(
   async (
-    req: Request<{ id?: BootcampDocument['id'] }, {}, IReview>,
+    req: Request<{ id?: BootcampDocument['id'] }, {}, CreateReviewDto>,
     res: ResponseCT<{ data: ReviewDocument }>,
     next: NextFunction
   ) => {
@@ -107,7 +111,7 @@ export const addReview = asyncHandler(
 // @access Private
 export const updateReview = asyncHandler(
   async (
-    req: Request<{ id: ReviewDocument['id'] }>,
+    req: Request<{ id: ReviewDocument['id'] }, {}, UpdateReviewDto>,
     res: ResponseCT<{ data: ReviewDocument }>,
     next
   ) => {

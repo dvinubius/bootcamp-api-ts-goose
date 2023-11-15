@@ -1,4 +1,8 @@
-import User, { IUser, UserDocument } from './user-model.js';
+import User, {
+  CreateUserDto,
+  UpdateUserDetailsDto,
+  UserDocument,
+} from './user-model.js';
 import { ErrorResponse } from '../utils/error-response.js';
 import { asyncHandler } from '../utils/async-handler.js';
 import { Request, Response, NextFunction } from 'express';
@@ -47,7 +51,7 @@ export const getUser = asyncHandler(
 // @access Private/Admin
 export const createUser = asyncHandler(
   async (
-    req: Request<{}, {}, IUser>,
+    req: Request<{}, {}, CreateUserDto>,
     res: ResponseCT<{ data: UserDocument }>,
     next: NextFunction
   ) => {
@@ -64,7 +68,7 @@ export const createUser = asyncHandler(
 // @access Private/Admin
 export const updateUser = asyncHandler(
   async (
-    req: Request<{ id: UserDocument['id'] }>,
+    req: Request<{ id: UserDocument['id'] }, {}, UpdateUserDetailsDto>,
     res: ResponseCT<{ data: UserDocument }>,
     next: NextFunction
   ) => {

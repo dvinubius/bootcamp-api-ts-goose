@@ -1,6 +1,10 @@
 import { Request, Response, NextFunction } from 'express';
 
-import Course, { CourseDocument, ICourse } from './course-model.js';
+import Course, {
+  CourseDocument,
+  CreateCourseDto,
+  UpdateCourseDto,
+} from './course-model.js';
 import { ErrorResponse } from '../utils/error-response.js';
 import { asyncHandler } from '../utils/async-handler.js';
 import Bootcamp, { BootcampDocument } from '../bootcamp/bootcamp-model.js';
@@ -74,7 +78,7 @@ export const addCourse = asyncHandler(
     req: Request<
       { id?: BootcampDocument['id'] },
       { data: CourseDocument },
-      ICourse
+      CreateCourseDto
     >,
     res: ResponseCT<{ data: CourseDocument }>,
     next: NextFunction
@@ -115,7 +119,7 @@ export const addCourse = asyncHandler(
 // @access Private
 export const updateCourse = asyncHandler(
   async (
-    req: Request<{ id: CourseDocument['id'] }>,
+    req: Request<{ id: CourseDocument['id'] }, {}, UpdateCourseDto>,
     res: ResponseCT<{ data: CourseDocument }>,
     next: NextFunction
   ) => {

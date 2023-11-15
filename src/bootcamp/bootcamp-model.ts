@@ -121,6 +121,7 @@ export interface BootcampDto {
   jobGuarantee: boolean;
   acceptGi: boolean;
 }
+export type UpdateBootcampDto = Partial<BootcampDto>;
 
 // Document interface
 export interface IBootcamp extends BootcampDto {
