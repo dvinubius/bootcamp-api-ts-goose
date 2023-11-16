@@ -2,15 +2,15 @@
 
 Original project - https://github.com/dvinubius/bootcamp-api
 
-This project is a Typescript port of an express app that uses mongoDB to provide a REST API.
+This project is a **Typescript port** of an express app that uses mongoDB+mongoose to provide a REST API.
 
 I've kept mongoose in spite of all its issues with TS, i.e. sound strong typing.
 
-I've noticed some express specific issues when it comes to strong typing.
+I've noticed some express specific issues when it comes to strong typing - both around mongoose and express.
 
-My conclusions are documented in a series of [blog posts](https://medium.com)
+My insights are documented in a series of [blog posts](https://medium.com)
 
-### TODO provide link 👆
+### TODO provide up-to-date link 👆
 
 ## Migration steps & fixes
 
