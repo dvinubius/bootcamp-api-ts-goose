@@ -12,8 +12,6 @@ My insights are documented in a series of [blog posts](https://medium.com)
 
 A typescript-mongoDB-zod version (no mongoose) is in this [repo](https://github.com/dvinubius/bootcamp-api-ts-mongo)
 
-### TODO provide up-to-date link 👆
-
 ## Migration steps & fixes
 
 - ✅ @types for all dependencies
